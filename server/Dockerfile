@@ -1,6 +1,6 @@
-FROM kienkauko/ubuntu:gnu
+FROM kienkauko/ubuntu:1.0
 COPY . /home/
 WORKDIR /home/
-RUN gcc server.c -o server
-CMD ["./server"]
+RUN make && chmod +x run.sh port.sh
+CMD ["./run.sh"]
 EXPOSE 8080
